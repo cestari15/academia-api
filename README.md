@@ -1,6 +1,6 @@
 # Academia API com PHP e Laravel
 
-Este projeto contém uma série de exercícios práticos para trabalhar com API e retorno dos dados no formato JSON usando a linguagem PHP e o framework Laravel.
+Este projeto é um exercicio escolar que representa uma loja virtual de uma academia onde venderemos planos e suplementos alimentares.
 
 ## Requisitos
 
