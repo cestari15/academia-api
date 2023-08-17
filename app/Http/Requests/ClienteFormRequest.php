@@ -25,9 +25,9 @@ class ClienteFormRequest extends FormRequest
     {
         return [
             'nome' => 'required|max:80|min:5',
-            'cpf' => 'required|max:11|min:11|unique:cliente,cpf',
+            'cpf' => 'required|max:11|min:11|unique:cliente_models,cpf',
             'celular' => 'required|max:15|min:10',
-            'email' => 'required|email|unique:cliente,email',
+            'email' => 'required|email|unique:cliente_models,email',
             'password' => 'required|'
         ];
     }
