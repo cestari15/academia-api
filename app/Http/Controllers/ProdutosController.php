@@ -25,4 +25,6 @@ class ProdutosController extends Controller
         ],200);
 
     }
+
+    
 }
