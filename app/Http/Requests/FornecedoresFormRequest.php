@@ -52,4 +52,6 @@ class FornecedoresFormRequest extends FormRequest
             'valor.min' => 'o campo deve conter no minimo 2 ',
         ];
     }
+
+
 }
