@@ -21,4 +21,16 @@ class FornecedoresController extends Controller
             "data" =>$fornecedor
         ],200);
     }
+
+    public function pesquisarPorNome(Request $request){
+        $fornecedor = Fornecedores::where('marca','like', '%'. $request->marca .'%' )->get();
+
+        if(count($fornecedor) > 0){
+            return response()->json([
+                'status'=>true,
+                'data'=>$fornecedor
+            ]);
+    
+        }
+    }
 }

@@ -26,5 +26,17 @@ class ProdutosController extends Controller
 
     }
 
+    public function pesquisarPorNome(Request $request){
+        $produto = Produto::where('produto','like', '%'. $request->produto .'%' )->get();
+
+        if(count($produto) > 0){
+            return response()->json([
+                'status'=>true,
+                'data'=>$produto
+            ]);
+    
+        }
+    }
+
     
 }

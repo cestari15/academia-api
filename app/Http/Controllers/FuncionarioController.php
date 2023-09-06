@@ -25,4 +25,16 @@ class FuncionarioController extends Controller
             "data" =>$funcionario
         ],200);
     }
+
+    public function pesquisarPorNome(Request $request){
+        $funcionario = Funcionario::where('nome','like', '%'. $request->nome .'%' )->get();
+
+        if(count($funcionario) > 0){
+            return response()->json([
+                'status'=>true,
+                'data'=>$funcionario
+            ]);
+    
+        }
+    }
 }

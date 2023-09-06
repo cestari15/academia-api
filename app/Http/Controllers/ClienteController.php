@@ -11,7 +11,7 @@ class ClienteController extends Controller
 {
     public function store(ClienteFormRequest $request){
 
-        $Cliente = ClienteModel::create([
+        $cliente = ClienteModel::create([
             'nome'=>$request->nome,
             'cpf'=>$request->cpf,
             'celular'=>$request->celular,
@@ -22,12 +22,19 @@ class ClienteController extends Controller
         return response()->json([
             "success"=>true,
             "message"=>"Cliente cadastrado com sucesso",
-            "data" =>$Cliente
+            "data" =>$cliente
         ],200);
     }
 
-    public function pesquisarPorId($id)
-    {
-      return  ClienteModel::find($id);
+    public function pesquisarPorNome(Request $request){
+        $cliente = ClienteModel::where('nome','like', '%'. $request->nome .'%' )->get();
+
+        if(count($cliente) > 0){
+            return response()->json([
+                'status'=>true,
+                'data'=>$cliente
+            ]);
+    
+        }
     }
 }
