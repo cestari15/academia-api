@@ -36,5 +36,10 @@ class FuncionarioController extends Controller
             ]);
     
         }
+
+        
     }
+
+   
+
 }

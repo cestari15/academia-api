@@ -43,7 +43,7 @@ class ClienteFormRequest extends FormRequest
     }
 
     public function messages()
-    {
+    {   
         return [
             'nome.required' => 'preencha o campo',
             'nome.max' => 'o nome deve conter no máximo 80 caracteris',
