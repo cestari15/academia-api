@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ProdutosController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('store', [ClienteController::class,'store']);
+
+Route::get('/find/{id}', [ClienteController::class, 'pesquisarPorId']);
